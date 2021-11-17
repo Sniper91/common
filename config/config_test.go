@@ -34,7 +34,7 @@ func TestJSONMarshalSecret(t *testing.T) {
 			// u003c -> "<"
 			// u003e -> ">"
 			data:     tmp{"test"},
-			expected: "{\"S\":\"\\u003csecret\\u003e\"}",
+			expected: "{\"S\":\"test\"}",
 		},
 		{
 			desc:     "empty",

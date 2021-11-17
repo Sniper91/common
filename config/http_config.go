@@ -41,7 +41,6 @@ import (
 
 // DefaultHTTPClientConfig is the default HTTP client configuration.
 var DefaultHTTPClientConfig = HTTPClientConfig{
-	FollowRedirects: true,
 }
 
 // defaultHTTPClientOptions holds the default HTTP client options.
@@ -194,7 +193,7 @@ type HTTPClientConfig struct {
 	// FollowRedirects specifies whether the client should follow HTTP 3xx redirects.
 	// The omitempty flag is not set, because it would be hidden from the
 	// marshalled configuration when set to false.
-	FollowRedirects bool `yaml:"follow_redirects" json:"follow_redirects"`
+	FollowRedirects bool `yaml:"follow_redirects,omitempty" json:"follow_redirects,omitempty"`
 }
 
 // SetDirectory joins any relative file paths with dir.

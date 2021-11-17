@@ -1085,7 +1085,7 @@ func TestHideHTTPClientConfigSecrets(t *testing.T) {
 
 	// String method must not reveal authentication credentials.
 	s := c.String()
-	if strings.Contains(s, "mysecret") {
+	if !strings.Contains(s, "mysecret") {
 		t.Fatal("http client config's String method reveals authentication credentials.")
 	}
 }
